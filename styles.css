@@ -1,0 +1,124 @@
+:root {
+  --ink: #034;
+  --white: #fff;
+  --gradient: linear-gradient(167deg, #eeffbe 23%, #22d7ff 116%);
+  --transition-duration: 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Onest", sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.layout {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  padding: clamp(1.5rem, 6vw, 8rem);
+}
+
+.logo {
+  margin-left: auto;
+  display: block;
+}
+
+.bio {
+  margin-top: auto;
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  max-width: 20rem;
+}
+
+.bio__name {
+  font-weight: 600;
+}
+
+.bio__text {
+  display: grid;
+  gap: 0.5rem;
+  line-height: 1.4;
+}
+
+.bio__text p {
+  margin: 0;
+}
+
+.link {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  vertical-align: bottom;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -0.1em -0.15em 0;
+    background: var(--gradient);
+    transform: scaleY(0.1);
+    transform-origin: bottom;
+    transition: transform var(--transition-duration) ease;
+  }
+}
+
+.link:focus-visible,
+.link:hover {
+
+  &::after {
+    transform: scaleY(1);
+  }
+}
+
+.social {
+  display: inline-flex;
+  margin-top: 2rem;
+  padding: 0.125rem;
+  gap: 0.125rem;
+  background: var(--gradient);
+}
+
+.social a {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  color: inherit;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: var(--white);
+    transform-origin: bottom left;
+    transform: translateX(-100%) scale(3) rotate(0deg);
+    transition: transform var(--transition-duration) ease;
+  }
+}
+
+.social a:focus-visible,
+.social a:hover {
+
+  &::before {
+    transform: translateX(-100%) scale(3) rotate(90deg);
+  }
+}
