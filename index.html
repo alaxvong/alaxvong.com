@@ -38,6 +38,7 @@
           <p>Chasing curiosities across design, code, music, and other crafts.</p>
           <p>Shaping experiences at <a class="link" href="https://www.kps3.com" target="_blank" rel="noopener">KPS3</a>.</p>
           <p>Force-feeding code at <a class="link" href="https://www.tmcc.edu" target="_blank" rel="noopener">TMCC</a>.</p>
+          <p>Say hello to <span id="email-prefix"></span> <a class="link" id="email-link"></a>.</p>
         </div>
   
         <nav class="social" aria-label="Social links">
@@ -68,5 +69,22 @@
       </div>
     </div>
   </main>
+  <script>
+    const domain = 'alaxvong.com';
+
+    const handles = [
+      { prefix: 'your', name: 'buddy' },
+      { prefix: 'the', name: 'guy' },
+      { prefix: 'my', name: 'friend' },
+    ];
+    const handle = handles[Math.floor(Math.random() * handles.length)];
+
+    const prefix = document.getElementById('email-prefix');
+    prefix.textContent = handle.prefix;
+
+    const link = document.getElementById('email-link');
+    link.href = `mailto:${handle.name}@${domain}`;
+    link.textContent = `${handle.name}@${domain}`;
+  </script>
 </body>
 </html>
