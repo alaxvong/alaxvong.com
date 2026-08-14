@@ -147,6 +147,7 @@ body {
   &:has(> :nth-child(2):is(:hover, :focus-visible)) { --dot-x: 200%; }
   &:has(> :nth-child(3):is(:hover, :focus-visible)) { --dot-x: 300%; }
   &:has(> :nth-child(4):is(:hover, :focus-visible)) { --dot-x: 400%; }
+  &:has(> :nth-child(5):is(:hover, :focus-visible)) { --dot-x: 500%; }
 
   &::before {
     content: '';
