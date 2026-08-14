@@ -70,13 +70,14 @@ body {
   background: var(--canvas);
   overflow: auto;
 
-  @media (width >= 30rem) {
+  @media (width >= 30rem) and (height >= 25rem) {
     position: relative;
     inset: auto;
     max-width: 25rem;
     margin: auto;
 
-    @media (height < 35rem) {
+    @media ((width >= 40rem) and (height < 48rem)) {
+      aspect-ratio: 3.5 / 2;
       max-width: none;
     }
     
@@ -90,6 +91,7 @@ body {
   margin: var(--content-padding);
   margin-bottom: 0;
   display: block;
+  grid-row: 1 / 2;
   grid-column: -2 / -1;
 
   @media (width >= 30rem) {
@@ -111,9 +113,14 @@ body {
   @media (width >= 30rem) {
     margin-bottom: calc(var(--content-padding) * 1.5);
     
-    @media (height < 35rem) {
-      grid-column: 1 / -2;
-      max-width: none;
+    @media ((width >= 40rem) and (height < 48rem)) {
+      grid-row: 1 / 2;
+      grid-column: 2 / -2;
+      align-self: start;
+      max-width: 20rem;
+      margin: 0;
+      margin-top: calc(var(--content-padding) * 2);
+      margin-right: var(--content-padding);
     }
   }
 
