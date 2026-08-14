@@ -60,7 +60,7 @@ body {
 
 .card {
   display: grid;
-  padding: clamp(1.5rem, 6vw, 3rem);
+  padding: 2rem;
   border-radius: 0.25rem;
   background: var(--white);
   
@@ -71,7 +71,7 @@ body {
 
   @media (width > 30rem) {
     margin: auto;
-    min-height: 44rem;
+    aspect-ratio: 2 / 3.5;
   }
 }
 
@@ -85,7 +85,7 @@ body {
   display: grid;
   justify-items: start;
   gap: 1rem;
-  max-width: 20rem;
+  max-width: 21rem;
 }
 
 .bio__name {
